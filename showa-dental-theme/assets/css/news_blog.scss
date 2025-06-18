@@ -1,0 +1,223 @@
+/* お知らせ、ブログ（投稿・アーカイブ）ページ */
+.w1040 {
+  width: 1040px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.info__flex {
+  display: flex;
+  gap: 50px;
+  word-break: break-all;
+}
+
+.info__sidebar {
+  width: 200px;
+}
+
+.info__main-bl {
+  width: calc(100% - 250px);
+}
+
+.info__side-ttl {
+  border-bottom: solid 1px #ccc;
+  font-size: 18px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 20px;
+  line-height: 1.6;
+
+  &::before {
+    background: #ccc;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.post-list__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px;
+}
+
+.post-list__img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 15px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.post-list__date {
+  font-size: 12px;
+  font-family: var(--mar);
+  line-height: 1.5;
+}
+
+.post-list__ttl {
+  font-size: 16px;
+}
+
+
+/* お知らせ・ブログ（詳細） */
+.info__ttl {
+  font-size: 36px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.info__cont {
+  margin-top: 30px;
+}
+
+.base__under-ttl,
+.info__cont h2 {
+  font-size: 40px;
+  color: var(--cyan);
+  position: relative;
+  padding-left: 25px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.base__under-ttl::before,
+.info__cont h2::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--cyan);
+}
+
+.base__under-ttl-left,
+.info__cont h3 {
+  margin-top: 80px;
+  border-bottom: 1px solid #E0E0E0;
+  position: relative;
+  padding-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+.base__under-ttl-left::before,
+.info__cont h3::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--cyan);
+}
+
+.base__under-ttl-middle,
+.info__cont h4 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: var(--cyan);
+}
+
+.base__txt,
+.info__cont p {
+  font-size: 15px;
+  margin-bottom: 30px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+.single__info-btn {
+  width: 200px;
+  display: block;
+  margin: 50px auto 0;
+}
+
+.news__all-link {
+  width: 153px;
+  border-bottom: 1px solid #E0E0E0;
+  position: relative;
+  padding-bottom: 7px;
+}
+
+.news__all-link:hover .icon-arrow {
+  right: -3px;
+  transition-duration: 0.3s;
+}
+
+.news__all-link .icon-arrow {
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -75%);
+  color: var(--cyan);
+  transition-duration: 0.3s;
+}
+
+.icon-arrow::before {
+  content: "\e900";
+}
+
+/* ページネーション */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 50px auto 0px;
+  align-items: center;
+
+
+  .page-numbers {
+    font-size: 14px;
+    font-family: var(--mar);
+
+
+    &.current {
+      background-color: #ebebeb;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      line-height: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .post-list__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+  }
+
+  .info__flex {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .info__main-bl {
+    width: 100%;
+  }
+
+  .info__sidebar{
+    width: 100%;
+  }
+}
